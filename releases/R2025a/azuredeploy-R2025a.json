@@ -193,7 +193,7 @@
     "functionAppName": "[concat('mw-autoshutdownapp', uniqueString(resourceGroup().id))]",
     "runtimeStack": "powershell",
     "storageAccountName": "[concat('mwstorage', uniquestring(resourceGroup().id))]",
-    "repoUrl": "https://github.com/mathworks-ref-arch/matlab-on-azure-win.git",
+    "repoUrl": "https://github.com/upradhan93/matlab-on-azure-win.git",
     "branch": "master",
     "appInsightsName": "[concat('mw-appinsights',uniqueString(resourceGroup().id))]",
     "roleName": "[concat('customroleforfunctionapp',uniqueString(resourceGroup().name))]",
@@ -823,7 +823,11 @@
             {
               "name": "HOURS_BEFORE_SHUTDOWN",
               "value": "[parameters('autoShutdown')]"
-            }
+            },
+                        {
+                            "name": "INSTANCE_NAME",
+                            "value": "[variables('vmName')]"
+                        }
           ]
         }
       },
